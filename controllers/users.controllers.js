@@ -18,7 +18,7 @@ export const postUser = async (req,res) => {
 export const putUser =  async (req,res) => {
     const id = req.params.id
     const {name, username, password} = req.body
-    const user = await User.findByIdAndUpdate(id,
+    const user = await User.findByIdAndUpdate(req.params.id,
         {name, username, password},
         {new: true}
 
@@ -28,7 +28,7 @@ export const putUser =  async (req,res) => {
 }
 export const delUser =  async (req,res) => {
 
-    const id = req.params.id
-    const deleteUser = await User.findByIdAndDelete(id)
+    
+    await User.findByIdAndDelete(req.params.id)
     res.json({message: "Usuario eliminado"})
 }
