@@ -7,7 +7,7 @@ import loginRoutes from "./routes/login.routes.js"
 import usersRoutes from "./routes/users.routes.js"
 import { connectDb } from "./utils/db.js"
 
-const app = express() // ✅ PRIMERO creas app
+const app = express() 
 
 connectDb()
 
