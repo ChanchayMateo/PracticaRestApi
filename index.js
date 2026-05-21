@@ -20,7 +20,7 @@ app.use("/api", indexRoutes)
 app.use("/api", loginRoutes)
 app.use("/api", usersRoutes)
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
   console.log("http://localhost:" + PORT)
 })
